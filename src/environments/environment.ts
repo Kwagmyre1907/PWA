@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  REST_NASA_BASE: 'https://api.nasa.gov/planetary/',
+  REST_NASA_APOD: 'apod',
+  serverUrl: 'http://localhost:8080'
 };
 
 /*
