@@ -3,9 +3,9 @@
   "short_name": "PWA",
   "icons": [
     {
-      "src": "assets/icons/app-icon-48x48.png",
+      "src": "assets/icons/app-icon-51x51.png",
       "type": "image/png",
-      "sizes": "48x48"
+      "sizes": "51x51"
     },
     {
       "src": "assets/icons/app-icon-96x96.png",
