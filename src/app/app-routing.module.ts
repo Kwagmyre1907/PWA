@@ -7,7 +7,7 @@ import {NasaAPODComponent} from './nasa-apod.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'apod',
+    redirectTo: 'dashboard',
     pathMatch: 'full'
   },
   {

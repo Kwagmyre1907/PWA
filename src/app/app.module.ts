@@ -32,6 +32,8 @@ import {DashboardComponent} from './dashboard.component';
 import {SidenavComponent} from './sidenav.component';
 import {NasaAPODComponent} from './nasa-apod.component';
 import {RouterModule} from '@angular/router';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -71,7 +73,8 @@ import {RouterModule} from '@angular/router';
     MatExpansionModule,
     WebcamModule,
     MatButtonToggleModule,
-    RouterModule
+    RouterModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

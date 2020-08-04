@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {NasaApodService} from '../lib/services/nasa-apod.service';
 import {NasaAPOD} from '../lib/models/nasa-apod';
+import {SwPush, SwRegistrationOptions, SwUpdate} from '@angular/service-worker';
+import {log} from 'util';
 
 @Component({
   selector: 'app-nasa-apod',
@@ -16,6 +18,7 @@ export class NasaAPODComponent implements OnInit {
   }
 
   nasaApod: NasaAPOD;
+
 
   ngOnInit() {
     this.nasaApodService.getAllAPODs().subscribe(

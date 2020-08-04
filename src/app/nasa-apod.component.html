@@ -4,7 +4,7 @@
     <mat-card-title>{{nasaApod.title}}</mat-card-title>
     <mat-card-subtitle>Astronomy Picture of the Day: {{nasaApod.date | date: 'yyyy-MM-dd'}}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image [src]="nasaApod.url">
+  <img mat-card-image [src]="nasaApod.url" alt="./src/assets/oops.jpg">
   <mat-card-content>
     <p>{{nasaApod.explanation}}</p>
   </mat-card-content>

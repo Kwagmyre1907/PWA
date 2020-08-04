@@ -24,6 +24,7 @@ export class NasaApodService {
 
   getAllAPODs(): Observable<NasaAPOD> {
     // const headers = this.headers;
+    console.log('APOD URL: ', this.URL);
     return this.httpClient.get<NasaAPOD>(`${this.URL}`)
       .pipe(
         catchError(this.handelError.handelError)
