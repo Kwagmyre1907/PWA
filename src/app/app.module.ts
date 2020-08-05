@@ -74,7 +74,7 @@ import { environment } from '../environments/environment';
     WebcamModule,
     MatButtonToggleModule,
     RouterModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('sw-master.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

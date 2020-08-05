@@ -4,12 +4,12 @@
     <mat-card-title>{{nasaApod.title}}</mat-card-title>
     <mat-card-subtitle>Astronomy Picture of the Day: {{nasaApod.date | date: 'yyyy-MM-dd'}}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image [src]="nasaApod.url" alt="./src/assets/oops.jpg">
+  <img mat-card-image [src]="nasaApod.url" alt="" >
   <mat-card-content>
     <p>{{nasaApod.explanation}}</p>
   </mat-card-content>
   <mat-card-actions>
     <button mat-button type="button" (click)="alert()">LIKE</button>
-    <button mat-button type="button" (click)="alert()">SHARE</button>
+    <button mat-button type="button" (click)="postData()">SHARE</button>
   </mat-card-actions>
 </mat-card>

@@ -1,0 +1,109 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "api": {
+    "test": [
+      {
+        "id": 1,
+        "name": "some comment",
+        "surname": "some surname",
+        "number": 1
+      },
+      {
+        "name": "Another",
+        "surname": "Test",
+        "number": 100,
+        "id": 2
+      }
+    ]
+  },
+  "apitest": [
+    {
+      "id": 1,
+      "name": "some comment",
+      "surname": "some surname",
+      "number": 1
+    },
+    {
+      "name": "Another",
+      "surname": "Test",
+      "number": 100,
+      "id": 2
+    },
+    {
+      "name": "Another",
+      "surname": "Test",
+      "number": 100,
+      "id": 3
+    },
+    {
+      "name": "Rayno",
+      "surname": "Stuff",
+      "number": 69,
+      "id": 4
+    },
+    {
+      "name": "Rayno",
+      "surname": "Stuff",
+      "number": 69,
+      "id": 5
+    },
+    {
+      "name": "Rayno",
+      "surname": "Stuff",
+      "number": 69,
+      "id": 6
+    },
+    {
+      "name": "Rayno",
+      "surname": "Stuff",
+      "number": 69,
+      "id": 7
+    },
+    {
+      "name": "Rayno",
+      "surname": "Stuff",
+      "number": 69,
+      "id": 8
+    },
+    {
+      "name": "Rayno",
+      "surname": "Stuff",
+      "number": 69,
+      "id": 9
+    },
+    {
+      "name": "Rayno",
+      "surname": "Stuff",
+      "number": 69,
+      "id": 10
+    },
+    {
+      "name": "Rayno",
+      "surname": "Stuff",
+      "number": 69,
+      "id": 11
+    },
+    {
+      "name": "Rayno",
+      "surname": "Stuff",
+      "number": 980719,
+      "id": 12
+    }
+  ]
+}

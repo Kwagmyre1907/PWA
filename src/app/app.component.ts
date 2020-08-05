@@ -11,6 +11,10 @@ import {log} from 'util';
 })
 export class AppComponent {
   title = 'PWA APP';
+  sampleData = {
+    data: 'sample',
+    moreData: 'more samples'
+  };
 
   constructor(private updates: SwUpdate,
               private push: SwPush,
@@ -30,11 +34,21 @@ export class AppComponent {
     if (!this.push.isEnabled) {
       this.push.requestSubscription(
         {serverPublicKey: 'BK6iHZcQ3qxgV279cqk2IZWIm4Ym8MekBgeL2CFxJBXWFOEoMu7z-y9o5MW2RyHr4IZtaAwh0Kr1yw-L-K0YibI'})
-        .then(
-          sub => {
-            console.log(sub);
-          }
-        );
+        .then(sub => { console.log(sub); });
     }
+
+    // console.log(this.push.notificationClicks.subscribe(
+    // data => {
+    //   data.notification;
+    // ));
+    // this.backgroundSync();
   }
+
+  // backgroundSync() {
+  //   navigator.serviceWorker.ready.then(
+  //     data => {
+  //       data.sync.register('back-sync');
+  //     }
+  //   ).catch(console.log);
+  // }
 }

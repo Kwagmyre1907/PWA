@@ -4,6 +4,7 @@ import {NasaApodService} from '../lib/services/nasa-apod.service';
 import {NasaAPOD} from '../lib/models/nasa-apod';
 import {SwPush, SwRegistrationOptions, SwUpdate} from '@angular/service-worker';
 import {log} from 'util';
+import {Test} from '../lib/models/test';
 
 @Component({
   selector: 'app-nasa-apod',
@@ -12,13 +13,18 @@ import {log} from 'util';
 })
 export class NasaAPODComponent implements OnInit {
 
+  testData: Test = new class implements Test {
+    name: string;
+    number: number;
+    surname: string;
+  };
+
   constructor(private nasaApodService: NasaApodService,
               private router: Router) {
     this.nasaApod = null;
   }
 
   nasaApod: NasaAPOD;
-
 
   ngOnInit() {
     this.nasaApodService.getAllAPODs().subscribe(
@@ -33,5 +39,12 @@ export class NasaAPODComponent implements OnInit {
 
   alert() {
     alert('Functionality coming soon');
+  }
+
+  postData() {
+    this.testData.name = 'Rayno';
+    this.testData.surname = 'Stuff';
+    this.testData.number = 980719;
+    this.nasaApodService.postData(this.testData);
   }
 }
