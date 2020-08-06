@@ -88,11 +88,21 @@
     };
   }
 
-  async function notifyClients() {
-    const clients = await self.clients.matchAll({includeUncontrolled: true});
-    for (const client of clients) {
-      client.postMessage('sync_finished');
+  self.addEventListener('notificationclick', function (event) {
+    let notification = event.notification;
+    let action = event.action;
+    console.log(notification);
+    if (action === 'confirm') {
+      console.log('Notification was confirmed');
+      notification.close();
+    } else {
+      console.log('Notification Action: ', action);
+      notification.close();
     }
-  }
+  });
+
+self.addEventListener('notificationclose', function (event) {
+  console.log('Notification was closed ', event);
+});
 
 // });

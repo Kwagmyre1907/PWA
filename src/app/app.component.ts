@@ -15,9 +15,7 @@ export class AppComponent {
     moreData: 'more samples'
   };
 
-  constructor(private updates: SwUpdate,
-              private push: SwPush,
-              private registrationOptions: SwRegistrationOptions) {
+  constructor(private updates: SwUpdate) {
     updates.available.subscribe(
       data => {
         console.log('Current PWA Version: ', data.current);
@@ -28,16 +26,5 @@ export class AppComponent {
       data => {
         console.log('PWA Version Updated: ', data.current);
       });
-
-    // TODO: Move to button click event
-    console.log('Notifications are enabled: ', this.push.isEnabled);
-    if (!this.push.isEnabled) {
-      this.push.requestSubscription(
-        {serverPublicKey: environment.VAPID_PUBLIC_KEY})
-        .then(sub => {
-          console.log(JSON.stringify(sub));
-        })
-        .catch(err => console.log(err));
-    }
   }
 }

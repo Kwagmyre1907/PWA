@@ -13,15 +13,34 @@ export class ErrorService {
 
   payload: NotificationOptions = {
     badge: '../../favicon.ico',
-    body: 'Request will be sent when internet is available',
+    body: 'Request will be sent when the problem is resolved',
     dir: 'ltr',
     icon: '../../favicon.ico',
+    tag: 'confirm-notification',
+    renotify: true,
     vibrate: [100, 50, 200],
+    actions: [
+      {action: 'confirm', title: 'Okay, Cool', icon: '../../favicon.ico'},
+      // {action: 'cancel', title: 'Nope', icon: '../../favicon.ico'},
+    ]
   };
 
   constructor() {
     this.keyCount = 0;
     this.connectToDB();
+    this.payload = {
+      badge: '../../favicon.ico',
+      body: 'Request will be sent when the problem is resolved',
+      dir: 'ltr',
+      icon: '../../favicon.ico',
+      tag: 'confirm-notification',
+      renotify: true,
+      vibrate: [100, 50, 200],
+      actions: [
+        {action: 'confirm', title: 'Okay, Cool', icon: '../../favicon.ico'},
+        // {action: 'cancel', title: 'Nope', icon: '../../favicon.ico'},
+      ]
+    };
   }
 
   async connectToDB() {
@@ -59,15 +78,26 @@ export class ErrorService {
       this.addPost(dbData, url).then(
         () => {
           navigator.serviceWorker.ready
-            .then(sw => {sw.sync.register('back-sync'); }
-          ).catch(console.log);
-
-          navigator.serviceWorker.ready
             .then(sw => {
-              sw.showNotification('Oops! Seems like you are offline...', this.payload);
-            });
+              sw.sync.register('back-sync');
+              sw.showNotification('Oops! Seems like there is a problem...', this.payload);
+            })
+            .catch(console.log);
         }
       );
+    }
+  }
+
+  sendNotification(title: string, body: string) {
+    console.log('sendNotification: ', title, body);
+    this.payload.body = body;
+    console.log('sendNotification: ', title, this.payload);
+    if ('serviceWorker' in navigator && 'Notification' in window) {
+      navigator.serviceWorker.ready
+        .then(sw => {
+          sw.showNotification(title, this.payload);
+        })
+        .catch(console.log);
     }
   }
 }
