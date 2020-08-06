@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import construct = Reflect.construct;
-import {Router} from '@angular/router';
 import {SwPush, SwRegistrationOptions, SwUpdate} from '@angular/service-worker';
+import {environment} from '../environments/environment';
 import {log} from 'util';
 
 @Component({
@@ -30,25 +29,15 @@ export class AppComponent {
         console.log('PWA Version Updated: ', data.current);
       });
 
+    // TODO: Move to button click event
     console.log('Notifications are enabled: ', this.push.isEnabled);
     if (!this.push.isEnabled) {
       this.push.requestSubscription(
-        {serverPublicKey: 'BK6iHZcQ3qxgV279cqk2IZWIm4Ym8MekBgeL2CFxJBXWFOEoMu7z-y9o5MW2RyHr4IZtaAwh0Kr1yw-L-K0YibI'})
-        .then(sub => { console.log(sub); });
+        {serverPublicKey: environment.VAPID_PUBLIC_KEY})
+        .then(sub => {
+          console.log(JSON.stringify(sub));
+        })
+        .catch(err => console.log(err));
     }
-
-    // console.log(this.push.notificationClicks.subscribe(
-    // data => {
-    //   data.notification;
-    // ));
-    // this.backgroundSync();
   }
-
-  // backgroundSync() {
-  //   navigator.serviceWorker.ready.then(
-  //     data => {
-  //       data.sync.register('back-sync');
-  //     }
-  //   ).catch(console.log);
-  // }
 }

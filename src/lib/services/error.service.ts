@@ -10,6 +10,15 @@ import {IDBPDatabase, openDB} from 'idb';
 export class ErrorService {
   private db: IDBPDatabase<MyDB>;
   keyCount: number;
+
+  payload: NotificationOptions = {
+    badge: '../../favicon.ico',
+    body: 'Request will be sent when internet is available',
+    dir: 'ltr',
+    icon: '../../favicon.ico',
+    vibrate: [100, 50, 200],
+  };
+
   constructor() {
     this.keyCount = 0;
     this.connectToDB();
@@ -49,8 +58,14 @@ export class ErrorService {
     if ('serviceWorker' in navigator && 'SyncManager' in window) {
       this.addPost(dbData, url).then(
         () => {
-          navigator.serviceWorker.ready.then(sw => {sw.sync.register('back-sync'); }
+          navigator.serviceWorker.ready
+            .then(sw => {sw.sync.register('back-sync'); }
           ).catch(console.log);
+
+          navigator.serviceWorker.ready
+            .then(sw => {
+              sw.showNotification('Oops! Seems like you are offline...', this.payload);
+            });
         }
       );
     }

@@ -1,26 +1,56 @@
 
-  <div class="grid-container">
-    <h1 class="mat-h1">Dashboard</h1>
-    <mat-grid-list cols="2" rowHeight="350px">
-      <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-        <mat-card class="dashboard-card">
-          <mat-card-header>
-            <mat-card-title>
-              {{card.title}}
-              <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-                <mat-icon>more_vert</mat-icon>
-              </button>
-              <mat-menu #menu="matMenu" xPosition="before">
-                <button mat-menu-item>Expand</button>
-                <button mat-menu-item>Remove</button>
-              </mat-menu>
-            </mat-card-title>
-          </mat-card-header>
-          <mat-card-content class="dashboard-card-content">
-            <div>
-            </div>
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
+<!--<div class="grid-container">-->
+  <div class="container-fluid" style="margin-top: 20px">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-4">
+          <button mat-icon-button class="mx-auto d-block" style="height: 4rem; width: 4rem">
+            <mat-icon >account_balance_wallet</mat-icon>
+          </button>
+        </div>
+        <div class="col-4">
+          <button mat-icon-button class="mx-auto d-block" style="height: 4rem; width: 4rem">
+            <mat-icon >import_export</mat-icon>
+          </button>
+        </div>
+        <div class="col-4">
+          <button mat-icon-button class="mx-auto d-block" style="height: 4rem; width: 4rem">
+            <mat-icon >send</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    &nbsp;
+    <h1 class="mat-h1">Account</h1>
+    &nbsp;
+    <mat-card style="">
+      <mat-card-header>
+        <mat-card-title>Current Account</mat-card-title>
+        <mat-card-subtitle>1234567890</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+      </mat-card-content>
+      <mat-card-footer>
+        <div class="container-fluid">
+          <h1 class="mat-h1">R420.69</h1>
+        </div>
+      </mat-card-footer>
+    </mat-card>
+    &nbsp;
+    <mat-card style="">
+      <mat-card-header>
+        <mat-card-title>Savings Account</mat-card-title>
+        <mat-card-subtitle>9874563210</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+      </mat-card-content>
+      <mat-card-footer>
+        <div class="container-fluid">
+          <h1 class="mat-h1">R1000.10</h1>
+        </div>
+      </mat-card-footer>
+    </mat-card>
+
   </div>
+<!--  </div>-->
+<!--  </div>-->
