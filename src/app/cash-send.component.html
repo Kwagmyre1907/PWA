@@ -1,0 +1,54 @@
+<form class="example-form">
+  <div class="container-fluid" style="margin-top: 30px">
+    <div class="col">
+      <!--    <h1 class="mat-h1">Pay Beneficiary</h1>-->
+      <mat-card style="">
+        <mat-card-header>
+          <mat-card-title><h4>Cash Send</h4></mat-card-title>
+          <mat-card-subtitle>Send funds to a cellphone number</mat-card-subtitle>
+        </mat-card-header>
+        &nbsp;
+        <mat-card-content>
+          <div class="col cus-container">
+
+            <div class="row">
+              <mat-form-field class="example-full-width">
+                <mat-label>Account From</mat-label>
+                <mat-select matNativeControl required>
+                  <mat-option value="curr">Current Account</mat-option>
+                  <mat-option value="save">Savings Account</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="row">
+              <mat-form-field class="example-full-width">
+                <input matInput type="text" required placeholder="Cell Number">
+              </mat-form-field>
+            </div>
+
+            <div class="row">
+              <mat-form-field class="example-full-width">
+                <input matInput type="text" required placeholder="Amount" prefix="R">
+              </mat-form-field>
+            </div>
+
+          </div>
+
+        </mat-card-content>
+        <mat-card-footer>
+          <div class="row">
+            <div class="cus-container">
+              <button mat-button (click)="back()">BACK</button>
+              &nbsp;
+              <button mat-flat-button (click)="send()">SEND</button>
+            </div>
+
+          </div>
+
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </div>
+</form>
+

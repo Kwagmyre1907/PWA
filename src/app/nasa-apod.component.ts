@@ -13,6 +13,7 @@ import {Test} from '../lib/models/test';
 })
 export class NasaAPODComponent implements OnInit {
 
+  // Test object for background sync
   testData: Test = new class implements Test {
     name: string;
     number: number;
@@ -27,6 +28,7 @@ export class NasaAPODComponent implements OnInit {
   nasaApod: NasaAPOD;
 
   ngOnInit() {
+    // Get data form NASA API
     this.nasaApodService.getAllAPODs().subscribe(
       data => {
         if (data) {
@@ -41,6 +43,7 @@ export class NasaAPODComponent implements OnInit {
     alert('Functionality coming soon');
   }
 
+  // Test data for background sync
   postData() {
     this.testData.name = 'Rayno';
     this.testData.surname = 'Stuff';

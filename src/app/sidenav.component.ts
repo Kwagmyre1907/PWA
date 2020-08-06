@@ -25,6 +25,7 @@ export class SidenavComponent {
               private registrationOptions: SwRegistrationOptions,
               private notificationService: ErrorService) {}
 
+  // Function to check if notifications are enabled
   enableNotifications() {
     this.notificationsEnabled = this.push.isEnabled;
     console.log('Notifications are enabled: ', this.notificationsEnabled);
@@ -32,7 +33,7 @@ export class SidenavComponent {
       this.notificationService.sendNotification('Uhm...', 'Pretty sure its all ready enabled.');
       return;
     }
-
+    // if notifications are not yet set, then a request will be sent to the user
     this.push.subscription.subscribe(
       getsub => {
         if (getsub === null) {

@@ -74,6 +74,18 @@ $primary: map-get($my-theme, primary);
 $accent: map-get($my-theme, accent);
 $warn: map-get($my-theme, warn);
 
+.example-form {
+  min-width: 150px;
+  //max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  //max-width: 500px;
+  //min-width: 50px;
+  width: 70%;
+}
+
 .cus-back-img {
   display:block;
   width:100%;
@@ -119,6 +131,13 @@ $warn: map-get($my-theme, warn);
   background-size: cover;
 }
 
+.my-card-avatar {
+  height: 50px;
+  width: 50px;
+  background-image: url("src/favicon.ico");
+  background-size: cover;
+}
+
 ///////////////////////////
 
 //----------RADIOBUTTONS-----------
@@ -145,12 +164,16 @@ $warn: map-get($my-theme, warn);
   background: mat-color($accent);
 }
 
+.cus-icon button{
+  background: mat-color($accent,0.6);
+}
+
 .mat-button,
 .mat-icon-button,
 .mat-raised-button,
 .mat-flat-button,
 .mat-stroked-button {
-  //background: mat-color($accent);
+  //background: mat-color($primary,0.69);
   @include mat-elevation-transition;
   @include mat-elevation(0);
 
@@ -161,6 +184,8 @@ $warn: map-get($my-theme, warn);
   &:focus, &:active {
     outline: none;
   }
+  height: 2.5rem;
+  width: 5rem
 }
 ///////////////////////////
 
@@ -230,4 +255,8 @@ $warn: map-get($my-theme, warn);
   background: mat-color($accent,0);
 }
 /////////////////////////
+
+.webcam-wrapper {
+  width: auto !important;
+}
 

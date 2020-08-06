@@ -34,6 +34,10 @@ import {NasaAPODComponent} from './nasa-apod.component';
 import {RouterModule} from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import {CameraComponent} from './camera.component';
+import { PaymentComponent } from './payment.component';
+import { TransferComponent } from './transfer.component';
+import { CashSendComponent } from './cash-send.component';
 
 
 @NgModule({
@@ -41,7 +45,11 @@ import { environment } from '../environments/environment';
     AppComponent,
     DashboardComponent,
     SidenavComponent,
-    NasaAPODComponent
+    NasaAPODComponent,
+    CameraComponent,
+    PaymentComponent,
+    TransferComponent,
+    CashSendComponent
   ],
   imports: [
     BrowserModule,

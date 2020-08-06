@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {DashboardComponent} from './dashboard.component';
 import {NasaAPODComponent} from './nasa-apod.component';
+import {CameraComponent} from './camera.component';
+import {PaymentComponent} from './payment.component';
+import {TransferComponent} from './transfer.component';
+import {CashSendComponent} from './cash-send.component';
 
 const routes: Routes = [
   {
@@ -17,7 +21,23 @@ const routes: Routes = [
   {
     path: 'apod',
     component: NasaAPODComponent
-  }
+  },
+  {
+    path: 'camera',
+    component: CameraComponent
+  },
+  {
+    path: 'pay',
+    component: PaymentComponent
+  },
+  {
+    path: 'transfer',
+    component: TransferComponent
+  },
+  {
+    path: 'cashsend',
+    component: CashSendComponent
+  },
 ];
 
 @NgModule({

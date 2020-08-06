@@ -24,6 +24,7 @@ export class NasaApodService {
     this.headers = new HttpHeaders().set('Content Type', 'application/json');
   }
 
+  // Get request service to get NASA images
   getAllAPODs(): Observable<NasaAPOD> {
     // const headers = this.headers;
     console.log('APOD URL: ', this.URL);
@@ -33,6 +34,7 @@ export class NasaApodService {
       );
   }
 
+  // Post request service to test background syncing
   postData(data: Test) {
     const headers = this.headers;
     console.log(JSON.stringify(data));

@@ -1,30 +1,38 @@
 
 <!--<div class="grid-container">-->
-  <div class="container-fluid" style="margin-top: 20px">
+  <div class="container-fluid" style="margin-top: 30px">
     <div class="col-12">
-      <div class="row">
-        <div class="col-4">
-          <button mat-icon-button class="mx-auto d-block" style="height: 4rem; width: 4rem">
+      <div class="row cus-icon">
+        <div class="col-3">
+          <button mat-icon-button class="mx-auto d-block" (click)="payment()" style="height: 4rem; width: 4rem">
             <mat-icon >account_balance_wallet</mat-icon>
           </button>
           <div class="d-flex justify-content-center">
-            <label>Pay</label>
+            <label class="mat-h3">Pay</label>
           </div>
         </div>
-        <div class="col-4">
-          <button mat-icon-button class="mx-auto d-block" style="height: 4rem; width: 4rem">
+        <div class="col-3">
+          <button mat-icon-button class="mx-auto d-block" (click)="transfer()" style="height: 4rem; width: 4rem">
             <mat-icon >import_export</mat-icon>
           </button>
           <div class="d-flex justify-content-center">
-            <label>Transfer</label>
+            <label class="mat-h3">Transfer</label>
           </div>
         </div>
-        <div class="col-4">
-          <button mat-icon-button class="mx-auto d-block" style="height: 4rem; width: 4rem">
+        <div class="col-3">
+          <button mat-icon-button class="mx-auto d-block" (click)="cashsend()" style="height: 4rem; width: 4rem">
             <mat-icon >send</mat-icon>
           </button>
           <div class="d-flex justify-content-center">
-            <label>Cash Send</label>
+            <label class="mat-h3">CashSend</label>
+          </div>
+        </div>
+        <div class="col-3">
+          <button mat-icon-button class="mx-auto d-block" (click)="camera()" style="height: 4rem; width: 4rem">
+            <mat-icon >photo_camera</mat-icon>
+          </button>
+          <div class="d-flex justify-content-center">
+            <label class="mat-h3">Camera</label>
           </div>
         </div>
       </div>
@@ -39,7 +47,7 @@
       <mat-card-content>
       </mat-card-content>
       <mat-card-footer>
-        <div class="container-fluid">
+        <div class="container-fluid" style="text-align: right">
           <h1 class="mat-h1">R6511.42</h1>
         </div>
       </mat-card-footer>
@@ -53,7 +61,7 @@
       <mat-card-content>
       </mat-card-content>
       <mat-card-footer>
-        <div class="container-fluid">
+        <div class="container-fluid" style="text-align: right">
           <h1 class="mat-h1">R226.10</h1>
         </div>
       </mat-card-footer>

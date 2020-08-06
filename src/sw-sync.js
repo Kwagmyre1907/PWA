@@ -1,11 +1,14 @@
 // (function () {
 //   'use strict';
 
+  // web-push service (used for push notifications)
   // const webPush = require('web-push');
   // console.log(webPush.generateVAPIDKeys());
 
+  // VAPID keys for push notifications
   const publicKey = 'BA6Sof7HkXQGxKGYKgQfuIHlN8fwwS6s3T0Dit2lT-7JnJK9T-HA0Lki67cXt61PjmYo5tuqD4wLu8ef8pMRBcI';
   const privateKey = 'mng46ESjF8V2JK-pm6UAJYwcWI9hWXaeBCVeXKi2W6Q';
+  // Push notification subscription
   const sub = {
     endpoint: 'https://fcm.googleapis.com/fcm/send/cessJlWZK0U:APA91bG8oaIBlBh4fDUoNFDR74Yi03go-tL_3ZYWIcFNDT3b1PxO-2gGXBS6PdziyKnMC981QCGoCDPUWHyDW5YAYWT_3wdpBNcWXohds50MzwB95_guy9be4OzALvBBvh5ah7jY8LfG',
     expirationTime: null,
@@ -14,6 +17,7 @@
       auth: 'UVG63e3WfwkBgcHCQgRWng'
     }
   };
+  // notification payload
   const payload = {
     notification: {
       title: 'Angular News',
@@ -32,12 +36,14 @@
   };
   // webPush.setVapidDetails('', publicKey,privateKey);
 
+  // event listener to listen for background sync
   self.addEventListener('sync', function (event) {
     if (event.tag === 'back-sync') {
       event.waitUntil(dataSend());
     }
   });
 
+  // get keys from IndexedDB
   function dataSend() {
     let db;
     const request = indexedDB.open('my-db');
@@ -50,6 +56,9 @@
     };
   }
 
+  // Loop through keys to get all key and value pairs
+  // at witch point a fetch request will be sent for each
+  // key (aka url) and value (aka object data)
   function getData(db) {
     const transaction = db.transaction(['post-store']);
     const objectStore = transaction.objectStore('post-store');
@@ -88,6 +97,7 @@
     };
   }
 
+  // event listener to listen for when notifications are clicked
   self.addEventListener('notificationclick', function (event) {
     let notification = event.notification;
     let action = event.action;
@@ -101,8 +111,9 @@
     }
   });
 
-self.addEventListener('notificationclose', function (event) {
-  console.log('Notification was closed ', event);
-});
+  // event listener to listen for when notifications are closed
+  self.addEventListener('notificationclose', function (event) {
+    console.log('Notification was closed ', event);
+  });
 
 // });

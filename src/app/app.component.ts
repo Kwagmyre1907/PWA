@@ -9,19 +9,22 @@ import {log} from 'util';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'PWA APP';
+  title = 'PWA Demo';
   sampleData = {
     data: 'sample',
     moreData: 'more samples'
   };
 
   constructor(private updates: SwUpdate) {
+
+    // Check for service worker updates
     updates.available.subscribe(
       data => {
         console.log('Current PWA Version: ', data.current);
         console.log('Available PWA Version', data.available);
       });
 
+    // Logs current version of serviceworker
     updates.activated.subscribe(
       data => {
         console.log('PWA Version Updated: ', data.current);
