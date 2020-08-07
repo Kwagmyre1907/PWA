@@ -42,7 +42,7 @@ export class NasaApodService {
     const headers = this.headers;
     console.log(JSON.stringify(data));
     this.URL = this.enviro.serverUrl;
-    this.httpClient.post(`${this.URL}/apitest`, data)
+    this.httpClient.post(`${this.URL}apitest`, data)
       .subscribe(
         (resp) => { console.log('POST Request (APP SIDE): ', resp); },
         (err) => {
