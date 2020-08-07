@@ -28,4 +28,12 @@ export class DashboardComponent {
   cashsend() {
     this.router.navigate(['/cashsend']).then();
   }
+  // Route to account component
+  currAccount() {
+    this.router.navigate(['/acc', 1]).then();
+  }
+
+  saveAccount() {
+    this.router.navigate(['/acc', 2]).then();
+  }
 }

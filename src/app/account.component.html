@@ -1,0 +1,87 @@
+<div class="container-fluid" style="margin-top: 30px">
+<!--  <div class="col-12">-->
+<!--    <div class="row cus-icon">-->
+<!--      <div class="col-3">-->
+<!--        <button mat-icon-button class="mx-auto d-block" (click)="payment()" style="height: 4rem; width: 4rem">-->
+<!--          <mat-icon >account_balance_wallet</mat-icon>-->
+<!--        </button>-->
+<!--        <div class="d-flex justify-content-center">-->
+<!--          <label class="mat-h3">Pay</label>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-3">-->
+<!--        <button mat-icon-button class="mx-auto d-block" (click)="transfer()" style="height: 4rem; width: 4rem">-->
+<!--          <mat-icon >import_export</mat-icon>-->
+<!--        </button>-->
+<!--        <div class="d-flex justify-content-center">-->
+<!--          <label class="mat-h3">Transfer</label>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-3">-->
+<!--        <button mat-icon-button class="mx-auto d-block" (click)="cashsend()" style="height: 4rem; width: 4rem">-->
+<!--          <mat-icon >send</mat-icon>-->
+<!--        </button>-->
+<!--        <div class="d-flex justify-content-center">-->
+<!--          <label class="mat-h3">CashSend</label>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-3">-->
+<!--        <button mat-icon-button class="mx-auto d-block" (click)="camera()" style="height: 4rem; width: 4rem">-->
+<!--          <mat-icon >photo_camera</mat-icon>-->
+<!--        </button>-->
+<!--        <div class="d-flex justify-content-center">-->
+<!--          <label class="mat-h3">Camera</label>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+  <mat-card style="">
+    <mat-card-header>
+      <mat-card-title>{{accountname}}</mat-card-title>
+      <mat-card-subtitle>{{accountnum}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+    </mat-card-content>
+    <mat-card-footer>
+      <div class="container-fluid" style="text-align: right">
+        <h1 class="mat-h1">{{balance}}</h1>
+      </div>
+    </mat-card-footer>
+  </mat-card>
+  &nbsp;
+  <mat-card style="">
+    <mat-card-header>
+      <mat-card-title>
+        Transactions
+        <button mat-button (click)="back()">BACK</button>
+      </mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let place of places">
+          <h3 matLine>{{place}}</h3>
+          <p matLine>{{getDate() | date: 'yyyy-MM-dd'}}</p>
+          <p matLine style="text-align: right">R{{getAmount()}}.00</p>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-card-footer>
+    </mat-card-footer>
+  </mat-card>
+<!--  <mat-card style="">-->
+<!--    <mat-card-header>-->
+<!--      <mat-card-title>Savings Account</mat-card-title>-->
+<!--      <mat-card-subtitle>9874563210</mat-card-subtitle>-->
+<!--    </mat-card-header>-->
+<!--    <mat-card-content>-->
+<!--    </mat-card-content>-->
+<!--    <mat-card-footer>-->
+<!--      <div class="container-fluid" style="text-align: right">-->
+<!--        <h1 class="mat-h1">R226.10</h1>-->
+<!--      </div>-->
+<!--    </mat-card-footer>-->
+<!--  </mat-card>-->
+
+</div>

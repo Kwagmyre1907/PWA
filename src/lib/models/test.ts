@@ -1,5 +1,5 @@
 export interface Test {
-  name: string;
+  name: any;
   surname: string;
   number: number;
 }

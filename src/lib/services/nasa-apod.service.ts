@@ -21,7 +21,10 @@ export class NasaApodService {
   constructor(private httpClient: HttpClient,
               private handelError: ErrorService) {
     this.URL = this.enviro.REST_NASA_BASE + this.enviro.REST_NASA_APOD + this.API_KEY;
-    this.headers = new HttpHeaders().set('Content Type', 'application/json');
+    this.headers = new HttpHeaders({
+      'Content Type': 'application/json',
+      'Access-Control-Allow-Origin': '*'
+    });
   }
 
   // Get request service to get NASA images
@@ -34,16 +37,16 @@ export class NasaApodService {
       );
   }
 
-  // Post request service to test background syncing
+  // Post request service to test background syncing https://postman-echo.com/post
   postData(data: Test) {
     const headers = this.headers;
     console.log(JSON.stringify(data));
-    const url = 'http://localhost:3000/apitest';
-    this.httpClient.post(`${url}`, data)
+    this.URL = this.enviro.serverUrl;
+    this.httpClient.post(`${this.URL}/apitest`, data)
       .subscribe(
-        (resp) => { console.log(resp); },
+        (resp) => { console.log('POST Request (APP SIDE): ', resp); },
         (err) => {
-          this.handelError.backgroundSync(data, url);
+          this.handelError.backgroundSync(data, this.URL);
           console.log(err);
         }
       );

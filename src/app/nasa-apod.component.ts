@@ -15,7 +15,7 @@ export class NasaAPODComponent implements OnInit {
 
   // Test object for background sync
   testData: Test = new class implements Test {
-    name: string;
+    name: any;
     number: number;
     surname: string;
   };
@@ -45,7 +45,8 @@ export class NasaAPODComponent implements OnInit {
 
   // Test data for background sync
   postData() {
-    this.testData.name = 'Rayno';
+    // console.log(navigator.geolocation);
+    this.testData.name = 'RaynoTEST';
     this.testData.surname = 'Stuff';
     this.testData.number = 980719;
     this.nasaApodService.postData(this.testData);

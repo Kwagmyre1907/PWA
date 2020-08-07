@@ -83,9 +83,12 @@
               // body: JSON.stringify(event.target.result),
               body: event.target.result[j],
               headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': 'no-cors'
               }
-            })
+            }).then(resp => {
+              console.log('Response (SW)', resp);
+              })
             console.log('body in post ', event.target.result[j]);
           }
         };

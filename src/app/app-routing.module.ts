@@ -7,6 +7,7 @@ import {CameraComponent} from './camera.component';
 import {PaymentComponent} from './payment.component';
 import {TransferComponent} from './transfer.component';
 import {CashSendComponent} from './cash-send.component';
+import {AccountComponent} from './account.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
     path: 'cashsend',
     component: CashSendComponent
   },
+  {
+    path: 'acc/:id',
+    component: AccountComponent
+  }
 ];
 
 @NgModule({

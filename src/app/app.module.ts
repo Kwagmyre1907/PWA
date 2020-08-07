@@ -38,6 +38,7 @@ import {CameraComponent} from './camera.component';
 import { PaymentComponent } from './payment.component';
 import { TransferComponent } from './transfer.component';
 import { CashSendComponent } from './cash-send.component';
+import { AccountComponent } from './account.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { CashSendComponent } from './cash-send.component';
     CameraComponent,
     PaymentComponent,
     TransferComponent,
-    CashSendComponent
+    CashSendComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
